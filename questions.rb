@@ -288,19 +288,19 @@ end
 # # implement fizzbuzz without modulo, i.e. the % method
 # # go from 1 to 100
 # # (there's no RSpec test for this one)
-# def fizzbuzz_without_modulo
-#   1.upto(100) do |n|
-#     str = ''
-#     if (n / 3.0).round == (n / 3.0)
-#       str << 'Fizz'
-#     end
+def fizzbuzz_without_modulo
+  1.upto(100) do |n|
+    str = ''
+    if (n / 3.0).round == (n / 3.0)
+      str << 'Fizz'
+    end
 
-#     if (n / 5.0).round == (n / 5.0)
-#       str << 'Buzz'
-#     end
-#     puts str.empty? ? n : str
-#   end
-# end
+    if (n / 5.0).round == (n / 5.0)
+      str << 'Buzz'
+    end
+    puts str.empty? ? n : str
+  end
+end
 
 # # print the lyrics of the song 99 bottles of beer on the wall
 # # http://www.99-bottles-of-beer.net/lyrics.html
@@ -308,15 +308,15 @@ end
 # # beer on the wall, and print 'no more bottles of beer on the wall'
 # # at the end.
 # # (there's no RSpec test for this one)
-# def ninety_nine_bottles_of_beer
-#   99.downto(1) do |n|
-#     nouns = Hash.new('bottles')
-#     nouns[1] = 'bottle'
+def ninety_nine_bottles_of_beer
+  99.downto(1) do |n|
+    nouns = Hash.new('bottles')
+    nouns[1] = 'bottle'
 
-#     puts "#{n} #{nouns[n]} of beer on the wall"
-#     puts "#{n} #{nouns[n]} of beer"
-#     puts 'take one down, pass it around'
-#     puts "#{n-1} #{nouns[n-1]} of beer on the wall\n\n" if n > 1
-#   end
-#   puts 'no bottles of beer on the wall'
-# end
+    puts "#{n} #{nouns[n]} of beer on the wall"
+    puts "#{n} #{nouns[n]} of beer"
+    puts 'take one down, pass it around'
+    puts "#{n-1} #{nouns[n-1]} of beer on the wall\n\n" if n > 1
+  end
+  puts 'no bottles of beer on the wall'
+end
