@@ -253,12 +253,12 @@ end
 # # the next year when your birthday will fall on a friday
 # # e.g. january 1st, will next be a friday in 2016
 # # return the day as a capitalized string like 'Friday'
-# def your_birthday_is_on_a_friday_in_the_year(birthday)
-#   until birthday.friday?
-#     birthday = Time.new birthday.year + 1, birthday.month, birthday.day
-#   end
-#   birthday.year
-# end
+def your_birthday_is_on_a_friday_in_the_year(birthday)
+  until birthday.friday?
+    birthday = Time.new birthday.year + 1, birthday.month, birthday.day
+  end
+  birthday.year
+end
 
 # # in a file, total the number of times words of different lengths
 # # appear. So in a file with the text "the cat sat on the blue mat"
@@ -270,6 +270,20 @@ end
 
 #   words.each { |w| count[w.size] += 1 } and return count
 # end
+
+def count_words_of_each_length_in_a_file(file_path)
+  word_lengths ={}
+  File.read(file_path).each_line do |line|
+    line.gsub(/\W/,' ').split.each do |word|
+      if word_lengths[word.length]
+        word_lengths[word.length] += 1
+      else
+        word_lengths[word.length] = 1
+      end
+    end
+  end
+  word_lengths
+end
 
 # # implement fizzbuzz without modulo, i.e. the % method
 # # go from 1 to 100
